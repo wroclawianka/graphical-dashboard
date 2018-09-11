@@ -15,4 +15,16 @@ export default class ApiService {
       .then(response => response.json())
       .catch(err => err);
   }
+
+  fetchRevenue() {
+    return this.fetchData("revenue");
+  }
+
+  fetchImpresions() {
+    return this.fetchData("impresions");
+  }
+
+  fetchVisits() {
+    return this.fetchData("visits");
+  }
 }
