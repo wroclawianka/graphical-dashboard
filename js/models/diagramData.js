@@ -1,5 +1,5 @@
 export default class DiagramData {
-  constructor(tablet, smartphone) {
+  constructor(smartphone, tablet) {
     (this.smartphone = smartphone), (this.tablet = tablet);
   }
 }
