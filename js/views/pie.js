@@ -15,7 +15,7 @@ export default class Pie {
       .arc()
       .innerRadius(radius - this.volume)
       .outerRadius(radius);
-    const pie = d3.layout.pie();
+    const pie = d3.layout.pie().sort(null);
     const parent = `.${this.name}`
 
     const svg = d3
