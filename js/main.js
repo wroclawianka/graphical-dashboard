@@ -11,15 +11,12 @@ const apiUrl = "http://localhost:3001";
 const apiService = new ApiService(apiUrl);
 apiService
   .fetchRevenue()
-  .then(data => (revenue = new Revenue(data.tablet, data.smartphone)))
-  .then(revenue => console.log(revenue));
+  .then(data => (revenue = new Revenue(data.tablet, data.smartphone)));
 
 apiService
   .fetchImpresions()
-  .then(data => (impresions = new Impresions(data.tablet, data.smartphone)))
-  .then(impresions => console.log(impresions));
+  .then(data => (impresions = new Impresions(data.tablet, data.smartphone)));
 
 apiService
   .fetchVisits()
-  .then(data => (visits = new Visits(data.tablet, data.smartphone)))
-  .then(visits => console.log(visits));
+  .then(data => (visits = new Visits(data.tablet, data.smartphone)));
