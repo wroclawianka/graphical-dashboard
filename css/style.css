@@ -1,3 +1,4 @@
+/* colors */
 :root {
     --grey-color: rgb(190,190,190);
 }
@@ -24,4 +25,27 @@
 
 .orange-pie .tablet{
   fill: rgb(241,206,83);
+}
+
+/* center container */
+.body {
+  width: 100%;
+}
+
+.container{
+  width: 50%;
+  margin: 0 auto;
+}
+
+/* grid */
+.container{
+  display: grid;
+  grid-template-columns: repeat(3, 265px);
+}
+
+/* graphs */
+.pie {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
