@@ -1,0 +1,27 @@
+:root {
+    --grey-color: rgb(190,190,190);
+}
+
+.green-pie .smartphone{
+  fill: rgb(69,111,35);
+}
+
+.green-pie .tablet{
+  fill: rgb(175,224,126);
+}
+
+.blue-pie .smartphone{
+  fill: rgb(48,82,100);
+}
+
+.blue-pie .tablet{
+  fill: rgb(125,205,227);
+}
+
+.orange-pie .smartphone{
+  fill: rgb(191,94,40);
+}
+
+.orange-pie .tablet{
+  fill: rgb(241,206,83);
+}
