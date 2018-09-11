@@ -11,9 +11,9 @@ let revenue = null;
 let impresions = null;
 let visits = null;
 
-let revenuePie = new Pie("green-pie");
-let impresionsPie = new Pie("blue-pie");
-let visitsPie = new Pie("orange-pie");
+let revenuePie = new Pie("revenue", "green-pie");
+let impresionsPie = new Pie("impresions", "blue-pie");
+let visitsPie = new Pie("visits", "orange-pie");
 
 apiService
   .fetchRevenue()

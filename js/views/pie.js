@@ -1,5 +1,6 @@
 export default class Pie {
-  constructor(type) {
+  constructor(name, type) {
+    this.name =  name;
     this.type = type;
     this.width = 160;
     this.height = 160;
@@ -15,11 +16,12 @@ export default class Pie {
       .innerRadius(radius - this.volume)
       .outerRadius(radius);
     const pie = d3.layout.pie();
+    const parent = `.${this.name}`
 
     const svg = d3
-      .select("body")
+      .select(parent)
       .append("svg")
-      .attr("class", this.type)
+      .attr("class", `pie ${this.type}`)
       .attr("width", this.width)
       .attr("height", this.height)
       .append("g")
