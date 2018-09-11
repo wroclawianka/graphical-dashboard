@@ -12,9 +12,10 @@ let impresions = null;
 let visits = null;
 
 let revenuePie = new Pie("green-pie");
-let impresionsPie = null;
-let visitsPie = null;
+let impresionsPie = new Pie("blue-pie");
+let visitsPie = new Pie("orange-pie");
 
+debugger;
 apiService
   .fetchRevenue()
   .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
@@ -22,8 +23,10 @@ apiService
 
 apiService
   .fetchImpresions()
-  .then(data => (impresions = new Impresions(data.smartphone, data.tablet)));
+  .then(data => (impresions = new Impresions(data.smartphone, data.tablet)))
+  .then(impresions => impresionsPie.createSVG(impresions));
 
 apiService
   .fetchVisits()
-  .then(data => (visits = new Visits(data.smartphone, data.tablet)));
+  .then(data => (visits = new Visits(data.smartphone, data.tablet)))
+  .then(visits => visitsPie.createSVG(visits));
