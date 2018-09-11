@@ -1,0 +1,26 @@
+{
+  "name": "graphical-dashboard",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run browser-sync\" \"npm run start-mockapi\"",
+    "browser-sync": "browser-sync start --server --files '*.css, *.html, *.js",
+    "start-mockapi": "json-server --watch data/db.json --port 3001",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wroclawianka/graphical-dashboard.git"
+  },
+  "author": "Dorota Zelga",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wroclawianka/graphical-dashboard/issues"
+  },
+  "homepage": "https://github.com/wroclawianka/graphical-dashboard#readme",
+  "dependencies": {
+    "browser-sync": "^2.24.7",
+    "concurrently": "^4.0.1"
+  }
+}
