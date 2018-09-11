@@ -2,16 +2,23 @@ import ApiService from "./services/apiService.js";
 import Revenue from "./models/revenue.js";
 import Impresions from "./models/impresions.js";
 import Visits from "./models/visits.js";
+import Pie from './views/pie.js';
 
 let revenue = null;
 let impresions = null;
 let visits = null;
 
+let revenuePie = new Pie("green-pie");
+let impresionsPie = null;
+let visitsPie = null;
+
 const apiUrl = "http://localhost:3001";
 const apiService = new ApiService(apiUrl);
+
 apiService
   .fetchRevenue()
-  .then(data => (revenue = new Revenue(data.smartphone, data.tablet)));
+  .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
+  .then(revenue => revenuePie.createSVG(revenue));
 
 apiService
   .fetchImpresions()
