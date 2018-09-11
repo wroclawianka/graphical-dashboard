@@ -15,7 +15,6 @@ let revenuePie = new Pie("green-pie");
 let impresionsPie = new Pie("blue-pie");
 let visitsPie = new Pie("orange-pie");
 
-debugger;
 apiService
   .fetchRevenue()
   .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
