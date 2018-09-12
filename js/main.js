@@ -15,20 +15,21 @@ let revenueFigure = null;
 let impresionsFigure = null;
 let visitsFigure = null;
 
+// debugger;
 apiService
   .fetchRevenue()
   .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
-  .then(revenue => revenueFigure = new Figure("revenue", "green-pie", revenue, true))
-  .then(revenue => revenueFigure.createFigure());
+  .then(revenue => revenueFigure = new Figure(revenue, true))
+  .then(revenue => revenueFigure.createFigure("revenue", "green-pie"));
 
 apiService
   .fetchImpresions()
   .then(data => (impresions = new Impresions(data.smartphone, data.tablet)))
-  .then(impresions => impresionsFigure = new Figure("impresions", "blue-pie", impresions))
-  .then(impresions => impresionsFigure.createFigure());
+  .then(impresions => impresionsFigure = new Figure(impresions))
+  .then(impresions => impresionsFigure.createFigure("impresions", "blue-pie"));
 
 apiService
   .fetchVisits()
   .then(data => (visits = new Visits(data.smartphone, data.tablet)))
-  .then(visits => visitsFigure = new Figure("visits", "orange-pie", visits))
-  .then(visits => visitsFigure.createFigure());
+  .then(visits => visitsFigure = new Figure(visits))
+  .then(visits => visitsFigure.createFigure("visits", "orange-pie"));
