@@ -87,6 +87,10 @@ body{
 }
 
 /* device values */
+.device-values {
+  font-size: 0.85em;
+}
+
 .device-values .procentage {
   color: var(--dark-grey-color);
 }
