@@ -6,6 +6,18 @@
     --light-green-color: rgb(175,224,126);
 }
 
+/* defaults */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'PT Sans', sans-serif;
+  color: var(--dark-grey-color);
+}
+
+/* pie colors */
 .green-pie .smartphone{
   fill: var(--dark-green-color);
 }
