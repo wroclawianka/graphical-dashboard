@@ -5,6 +5,7 @@ import {
   formatCurrencyValues,
   countPercentage
 } from "./helpers.js";
+import { appendDeviceSection } from "./devices.js"
 
 export default class Pie {
   constructor(name, type, data, isCurrency) {
@@ -59,6 +60,9 @@ export default class Pie {
   appendInfo() {
     const label = this.name.toUpperCase();
     const totalValue = Object.values(this.data).reduce((a, b) => a + b, 0);
+    const tabletPercentage = countPercentage(totalValue, this.data.tablet);
+    const smartphonePercentage = countPercentage(totalValue, this.data.smartphone);
+
     let total, tabletValue, smartphoneValue;
 
     if (this.isCurrency) {
@@ -74,7 +78,19 @@ export default class Pie {
         this.data.smartphone
       ]);
     }
-    const tabletPercentage = countPercentage(total, this.data.tablet);
-    const smartphonePercentage = countPercentage(total, this.data.smartphone);
-  }
+
+    const tabletDetails = {
+      type: "tablet",
+      precentage: tabletPercentage,
+      value: tabletValue
+    }
+    const smartphoneDetails = {
+      type: "smartphone",
+      precentage: smartphonePercentage,
+      value: smartphoneValue,
+    }
+    const devicesDetails = [tabletDetails, smartphoneDetails];
+    appendDeviceSection(this.name, devicesDetails);
+}
+
 }
