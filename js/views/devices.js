@@ -1,8 +1,33 @@
+import { formatValue, countPercentage, sumValues } from "./helpers.js";
+
+// append device info
+export function appendDevicesDetails(name, data, isCurrency) {
+  const totalValue = sumValues(data);
+
+  const tabletPercentage = countPercentage(totalValue, data.tablet);
+  const tabletValue = formatValue(data.tablet, isCurrency);
+  const tabletDetails = {
+    type: "tablet",
+    precentage: tabletPercentage,
+    value: tabletValue
+  };
+
+  const smartphonePercentage = countPercentage(totalValue, data.smartphone);
+  const smartphoneValue = formatValue(data.smartphone, isCurrency);
+  const smartphoneDetails = {
+    type: "smartphone",
+    precentage: smartphonePercentage,
+    value: smartphoneValue
+  };
+  const devicesDetails = [tabletDetails, smartphoneDetails];
+  appendDeviceSection(name, devicesDetails);
+}
+
 // create section with device details and add it to parent node
-export function appendDeviceSection(parentName, devicesDetails) {
+function appendDeviceSection(parentName, devicesDetails) {
   const parent = document.getElementById(parentName);
   const deviceValuesEl = createDivWithClass("device-values");
-  const html = createDeviceDetailsHTML(devicesDetails);
+  const html = createDeviceDetailsHTML(devicesDetails); //TODO one line
   deviceValuesEl.innerHTML = html;
   parent.appendChild(deviceValuesEl);
 }
