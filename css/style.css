@@ -52,7 +52,7 @@ body{
 }
 
 .container{
-  width: 50%;
+  width: min-content;
   margin: 0 auto;
 }
 
