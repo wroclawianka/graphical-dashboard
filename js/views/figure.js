@@ -7,7 +7,7 @@ import {
 } from "./helpers.js";
 import { appendDeviceSection } from "./devices.js"
 
-export default class Pie {
+export default class Figure {
   constructor(name, type, data, isCurrency) {
     this.name = name;
     this.type = type;
