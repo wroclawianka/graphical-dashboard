@@ -27,3 +27,7 @@ export function countPercentage(total, value) {
 export function sumValues(values) {
   return Object.values(values).reduce((a, b) => a + b, 0)
 }
+
+export function formatValue(value, isCurrency) {
+  return isCurrency ? formatCurrency(value) : formatNumber(value);
+}
