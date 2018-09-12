@@ -9,7 +9,7 @@ npm install
 
 Run app
 ```
-npm run dev
+npm start
 ```
 
 Run dev mode
