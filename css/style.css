@@ -4,6 +4,10 @@
     --light-grey-color: rgb(190,190,190);
     --dark-green-color: rgb(69,111,35);
     --light-green-color: rgb(175,224,126);
+    --dark-blue-color: rgb(48,82,100);
+    --light-blue-color: rgb(125,205,227);
+    --dark-orange-color: rgb(191,94,40);
+    --light-orange-color: rgb(241,206,83);
 }
 
 /* defaults */
@@ -27,19 +31,19 @@ body{
 }
 
 .blue-pie .smartphone{
-  fill: rgb(48,82,100);
+  fill: var(--dark-blue-color);
 }
 
 .blue-pie .tablet{
-  fill: rgb(125,205,227);
+  fill: var(--light-blue-color)
 }
 
 .orange-pie .smartphone{
-  fill: rgb(191,94,40);
+  fill: var(--dark-orange-color);
 }
 
 .orange-pie .tablet{
-  fill: rgb(241,206,83);
+  fill: var(--light-orange-color);
 }
 
 /* center container */
@@ -111,10 +115,26 @@ body{
   text-transform:capitalize;
 }
 
-.tablet-value .device-type{
+#revenue .tablet{
   color: var(--light-green-color);
 }
 
-.smartphone-value .device-type{
+#revenue .smartphone{
    color: var(--dark-green-color);
+}
+
+#impresions .tablet{
+  color: var(--light-blue-color);
+}
+
+#impresions .smartphone{
+   color: var(--dark-blue-color);
+}
+
+#visits .tablet{
+  color: var(--light-orange-color);
+}
+
+#visits .smartphone{
+   color: var(--dark-orange-color);
 }
