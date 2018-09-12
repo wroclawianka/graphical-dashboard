@@ -65,7 +65,11 @@ body{
 .box{
   display: grid;
   grid-tmplate-rows: 160px, auto;
-  grid-template-areas: "pie" "device-values"
+  grid-template-areas: "pie" "device-values";
+
+  width: 265px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--light-grey-color);
 }
 
 .pie{
