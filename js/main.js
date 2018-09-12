@@ -11,21 +11,24 @@ let revenue = null;
 let impresions = null;
 let visits = null;
 
-let revenuePie = new Pie("revenue", "green-pie");
-let impresionsPie = new Pie("impresions", "blue-pie");
-let visitsPie = new Pie("visits", "orange-pie");
+let revenuePie = null;
+let impresionsPie = null;
+let visitsPie = null;
 
 apiService
   .fetchRevenue()
   .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
-  .then(revenue => revenuePie.createSVG(revenue));
+  .then(revenue => revenuePie = new Pie("revenue", "green-pie", revenue, true))
+  .then(revenue => revenuePie.createDiagram());
 
 apiService
   .fetchImpresions()
   .then(data => (impresions = new Impresions(data.smartphone, data.tablet)))
-  .then(impresions => impresionsPie.createSVG(impresions));
+  .then(impresions => impresionsPie = new Pie("impresions", "blue-pie", impresions))
+  .then(impresions => impresionsPie.createDiagram());
 
 apiService
   .fetchVisits()
   .then(data => (visits = new Visits(data.smartphone, data.tablet)))
-  .then(visits => visitsPie.createSVG(visits));
+  .then(visits => visitsPie = new Pie("visits", "orange-pie", visits))
+  .then(visits => visitsPie.createDiagram());

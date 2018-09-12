@@ -1,14 +1,29 @@
 /* colors */
 :root {
-    --grey-color: rgb(190,190,190);
+    --dark-grey-color: rgb(67,67,67);
+    --light-grey-color: rgb(190,190,190);
+    --dark-green-color: rgb(69,111,35);
+    --light-green-color: rgb(175,224,126);
 }
 
+/* defaults */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  font-family: 'PT Sans', sans-serif;
+  color: var(--dark-grey-color);
+}
+
+/* pie colors */
 .green-pie .smartphone{
-  fill: rgb(69,111,35);
+  fill: var(--dark-green-color);
 }
 
 .green-pie .tablet{
-  fill: rgb(175,224,126);
+  fill: var(--light-green-color);
 }
 
 .blue-pie .smartphone{
@@ -37,10 +52,38 @@
   margin: 0 auto;
 }
 
-/* grid */
+/* container grid */
 .container{
   display: grid;
   grid-template-columns: repeat(3, 265px);
+  /* margin */
+  margin-top: 3em;
+  grid-gap: 50px;
+}
+
+/* box grid */
+.box{
+  display: grid;
+  grid-tmplate-rows: 160px, auto;
+  grid-template-areas: "pie" "device-values";
+
+  width: 265px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--light-grey-color);
+}
+
+.pie{
+  grid-area: pie
+}
+
+.device-values{
+  grid-area: device-values;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.smartphone-value > p {
+  float: right;
 }
 
 /* graphs */
@@ -48,4 +91,30 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* device values */
+.device-values {
+  font-size: 0.85em;
+}
+
+.device-values .procentage {
+  color: var(--dark-grey-color);
+}
+
+.device-values .value {
+  color: var(--light-grey-color);
+}
+
+.device-type {
+  font-weight: bold;
+  text-transform:capitalize;
+}
+
+.tablet-value .device-type{
+  color: var(--light-green-color);
+}
+
+.smartphone-value .device-type{
+   color: var(--dark-green-color);
 }
