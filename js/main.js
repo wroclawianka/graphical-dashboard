@@ -19,16 +19,16 @@ apiService
   .fetchRevenue()
   .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
   .then(revenue => revenueFigure = new Figure("revenue", "green-pie", revenue, true))
-  .then(revenue => revenueFigure.createDiagram());
+  .then(revenue => revenueFigure.createFigure());
 
 apiService
   .fetchImpresions()
   .then(data => (impresions = new Impresions(data.smartphone, data.tablet)))
   .then(impresions => impresionsFigure = new Figure("impresions", "blue-pie", impresions))
-  .then(impresions => impresionsFigure.createDiagram());
+  .then(impresions => impresionsFigure.createFigure());
 
 apiService
   .fetchVisits()
   .then(data => (visits = new Visits(data.smartphone, data.tablet)))
   .then(visits => visitsFigure = new Figure("visits", "orange-pie", visits))
-  .then(visits => visitsFigure.createDiagram());
+  .then(visits => visitsFigure.createFigure());

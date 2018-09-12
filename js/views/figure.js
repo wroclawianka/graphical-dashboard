@@ -18,7 +18,7 @@ export default class Figure {
     this.volume = 7;
   }
 
-  createDiagram() {
+  createFigure() {
     this.createSVG();
     this.appendInfo();
   }
