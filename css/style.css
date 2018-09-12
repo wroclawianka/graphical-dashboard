@@ -46,6 +46,27 @@
   grid-template-columns: repeat(3, 265px);
 }
 
+/* box grid */
+.box{
+  display: grid;
+  grid-tmplate-rows: 160px, auto;
+  grid-template-areas: "pie" "device-values"
+}
+
+.pie{
+  grid-area: pie
+}
+
+.device-values{
+  grid-area: device-values;
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+}
+
+.smartphone-value > p {
+  float: right;
+}
+
 /* graphs */
 .pie {
   display: block;
