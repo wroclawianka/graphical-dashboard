@@ -23,3 +23,7 @@ export function formatCurrencyValues(values) {
 export function countPercentage(total, value) {
   return `${(value * 100) / total}%`;
 }
+
+export function sumValues(values) {
+  return Object.values(values).reduce((a, b) => a + b, 0)
+}
