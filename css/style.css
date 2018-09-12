@@ -52,3 +52,24 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+/* device values */
+.device-values .procentage {
+  color: var(--dark-grey-color);
+}
+
+.device-values .value {
+  color: var(--light-grey-color);
+}
+
+.device-type {
+  font-weight: bold;
+}
+
+.tablet-value .device-type{
+  color: var(--light-green-color);
+}
+
+.smartphone-value .device-type{
+   color: var(--dark-green-color);
+}
