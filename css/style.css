@@ -40,7 +40,7 @@
   margin: 0 auto;
 }
 
-/* grid */
+/* container grid */
 .container{
   display: grid;
   grid-template-columns: repeat(3, 265px);
