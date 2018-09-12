@@ -27,8 +27,7 @@ export function appendDevicesDetails(name, data, isCurrency) {
 function appendDeviceSection(parentName, devicesDetails) {
   const parent = document.getElementById(parentName);
   const deviceValuesEl = createDivWithClass("device-values");
-  const html = createDeviceDetailsHTML(devicesDetails); //TODO one line
-  deviceValuesEl.innerHTML = html;
+  deviceValuesEl.innerHTML = createDeviceDetailsHTML(devicesDetails);
   parent.appendChild(deviceValuesEl);
 }
 
