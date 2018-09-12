@@ -1,14 +1,17 @@
 /* colors */
 :root {
-    --grey-color: rgb(190,190,190);
+    --dark-grey-color: rgb(67,67,67);
+    --light-grey-color: rgb(190,190,190);
+    --dark-green-color: rgb(69,111,35);
+    --light-green-color: rgb(175,224,126);
 }
 
 .green-pie .smartphone{
-  fill: rgb(69,111,35);
+  fill: var(--dark-green-color);
 }
 
 .green-pie .tablet{
-  fill: rgb(175,224,126);
+  fill: var(--light-green-color);
 }
 
 .blue-pie .smartphone{
