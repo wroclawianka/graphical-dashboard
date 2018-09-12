@@ -101,6 +101,7 @@ body{
 
 .device-type {
   font-weight: bold;
+  text-transform:capitalize;
 }
 
 .tablet-value .device-type{
