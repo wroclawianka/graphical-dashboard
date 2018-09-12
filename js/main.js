@@ -18,7 +18,7 @@ let visitsPie = null;
 apiService
   .fetchRevenue()
   .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
-  .then(revenue => revenuePie = new Pie("revenue", "green-pie", revenue))
+  .then(revenue => revenuePie = new Pie("revenue", "green-pie", revenue, false))
   .then(revenue => revenuePie.createDiagram());
 
 apiService
