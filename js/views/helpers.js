@@ -9,13 +9,13 @@ export function formatNumberValues(values) {
   return values;
 }
 
-export function formatCurrency(value) {
+export function formatMonetaryValue(value) {
   return `${value.toLocaleString("es")} €`;
 }
 
-export function formatCurrencyValues(values) {
+export function formatMonetaryValueValues(values) {
   values.forEach(function(value, index, theArray) {
-    theArray[index] = formatCurrency(value);
+    theArray[index] = formatMonetaryValue(value);
   });
   return values;
 }
@@ -28,6 +28,6 @@ export function sumValues(values) {
   return Object.values(values).reduce((a, b) => a + b, 0)
 }
 
-export function formatValue(value, isCurrency) {
-  return isCurrency ? formatCurrency(value) : formatNumber(value);
+export function formatValue(value, isMonetaryValue) {
+  return isMonetaryValue ? formatMonetaryValue(value) : formatNumber(value);
 }

@@ -2,11 +2,11 @@ import DevicesDetails from "./devicesDetails.js"
 import PieChart from "./pieChart.js"
 
 export default class Figure {
-  constructor(name, type, data, isCurrency) {
+  constructor(name, type, data, isMonetaryValue) {
     this.name = name;
     this.type = type;
     this.data = data;
-    this.isCurrency = isCurrency;
+    this.isMonetaryValue = isMonetaryValue;
   }
 
   createFigure() {
@@ -21,6 +21,6 @@ export default class Figure {
 
   createDevicesDetails(){
     const devicesDetails = new DevicesDetails();
-    devicesDetails.appendDevicesDetails(this.name, this.data, this.isCurrency)
+    devicesDetails.appendDevicesDetails(this.name, this.data, this.isMonetaryValue)
   }
 }
