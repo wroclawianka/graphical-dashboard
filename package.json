@@ -9,7 +9,7 @@
     "dev": "concurrently \"npm run browser-sync\" \"npm run start-mockapi\"",
     "browser-sync": "browser-sync start --server --files '*.css, *.html, *.js",
     "start-mockapi": "json-server --watch data/db.json --port 3001",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jasmine test/spec.js"
   },
   "repository": {
     "type": "git",
