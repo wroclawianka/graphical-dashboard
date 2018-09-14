@@ -68,7 +68,6 @@ body{
 /* box grid */
 .box{
   display: grid;
-  grid-tmplate-rows: 160px, auto;
   grid-template-areas: "pie" "device-values";
 
   width: 265px;
