@@ -1,7 +1,8 @@
 import {
   formatNumber,
   formatNumberValues,
-  formatMonetaryValue
+  formatMonetaryValue,
+  formatMonetaryValues
 } from "../js/views/helpers";
 
 describe("Helpers", function() {
@@ -38,6 +39,21 @@ describe("Helpers", function() {
       const expected = `20,000,000 ${currency}`;
       expect(formatMonetaryValue(value, format, currency)).toBe(expected);
     });
+
+    // formatMonetaryValues
+    it(`should format monetary values with ${format}`, function() {
+      const values = [80000, 120000];
+      const expected = ["80,000 €", "120,000 €"];
+      expect(formatMonetaryValues(values, format)).toEqual(expected);
+    });
+
+    // formatMonetaryValues
+    it(`should format monetary values with ${format}
+      and ${currency} symbol`, function() {
+      const values = [80000, 120000];
+      const expected = [`80,000 ${currency}`, `120,000 ${currency}`];
+      expect(formatMonetaryValues(values, format, currency)).toEqual(expected);
+    });
   });
 
   // default format
@@ -61,6 +77,13 @@ describe("Helpers", function() {
       const value = 20000000;
       const expected = "20.000.000 €";
       expect(formatMonetaryValue(value)).toBe(expected);
+    });
+
+    // formatMonetaryValues
+    it(`should format monetary values with defaults`, function() {
+      const values = [80000, 120000];
+      const expected = ["80.000 €", "120.000 €"];
+      expect(formatMonetaryValues(values)).toEqual(expected);
     });
   });
 });
