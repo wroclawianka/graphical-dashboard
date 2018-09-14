@@ -13,7 +13,7 @@ export function formatMonetaryValue(value, format = "es", currency = "€") {
   return `${value.toLocaleString(format)} ${currency}`;
 }
 
-export function formatMonetaryValueValues(values, format, currency) {
+export function formatMonetaryValues(values, format, currency) {
   values.forEach(function(value, index, theArray) {
     theArray[index] = formatMonetaryValue(value, format, currency);
   });
