@@ -35,13 +35,10 @@ export default class Figure {
 
   createSummary(){
     const name = this.name;
-
     const values = Object.values(this.data);
     const totalValue = sumValues(values);
     const total = formatValue(totalValue, this.isMonetaryValue);
-
     const summary = new Summary(name, total);
-
     summary.appendSummary();
   }
 
