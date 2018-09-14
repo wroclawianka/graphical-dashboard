@@ -27,9 +27,10 @@ export default class DeviceDetails{
   // create section with device details and add it to parent node
   appendDeviceSection(parentName, devicesDetails) {
     const parent = document.getElementById(parentName);
+    const parentContent = parent.getElementsByClassName("content")[0];
     const deviceValuesEl = this.createDivWithClass("device-values");
     deviceValuesEl.innerHTML = this.createDeviceDetailsHTML(devicesDetails);
-    parent.appendChild(deviceValuesEl);
+    parentContent.appendChild(deviceValuesEl);
   }
 
   // create section with device details
