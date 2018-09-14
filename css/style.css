@@ -162,7 +162,6 @@ body{
 .summary .name {
   color: var(--light-grey-color);
   text-transform:uppercase;
-  font-weight: 400;
   font-size: 1.18em;
 }
 
