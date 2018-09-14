@@ -7,13 +7,8 @@ import Figure from './views/figure.js';
 const apiUrl = "http://localhost:3001";
 const apiService = new ApiService(apiUrl);
 
-let revenue = null;
-let impresions = null;
-let visits = null;
-
-let revenueFigure = null;
-let impresionsFigure = null;
-let visitsFigure = null;
+let [revenue, impresions, visits] = [null, null, null];
+let [revenueFigure, impresionsFigure, visitsFigure] = [null, null, null];
 
 apiService
   .fetchRevenue()
