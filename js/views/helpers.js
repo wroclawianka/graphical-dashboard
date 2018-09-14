@@ -28,6 +28,6 @@ export function sumValues(values) {
   return Object.values(values).reduce((a, b) => a + b, 0)
 }
 
-export function formatValue(value, isMonetaryValue, format) {
+export function formatValue(value, isMonetaryValue, format, currency) {
   return isMonetaryValue ? formatMonetaryValue(value, format, currency) : formatNumber(value, format);
 }
