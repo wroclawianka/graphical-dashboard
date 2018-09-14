@@ -1,4 +1,4 @@
-import { sumValues } from "./../helpers/calculationHelpers.js"
+import { createDivWithClass, findParentContent } from "./../helpers/DOMHelpers.js"
 
 export default class Summary{
   constructor(name, total){
@@ -8,9 +8,8 @@ export default class Summary{
 
   appendSummary() {
     const html = this.createSummaryHTML();
-    const parent = document.getElementById(this.name);
-    const parentContent = parent.getElementsByClassName("content")[0];
-    const summary = this.createDivWithClass("summary");
+    const parentContent = findParentContent(this.name);
+    const summary = createDivWithClass("summary");
     summary.innerHTML = html;
     parentContent.appendChild(summary);
   }
@@ -20,12 +19,5 @@ export default class Summary{
       <p class="name">${this.name}</p>
       <p class="total">${this.total}</p>
     `
-  }
-
-  // create div with specified class name
-  createDivWithClass(className) {
-    const element = document.createElement("div");
-    element.setAttribute("class", className);
-    return element;
   }
 }
