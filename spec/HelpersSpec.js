@@ -1,17 +1,36 @@
-import { formatNumber } from "../js/views/helpers";
+import { formatNumber, formatNumberValues } from "../js/views/helpers";
 
 describe("Helpers", function() {
+
+  // format specified
   describe("when you specify format", function() {
-    let format = "en-US";
+    const format = "en-US";
 
     it(`should format number as ${format}`, function() {
-      expect(formatNumber(20000000, format)).toBe("20,000,000");
+      const value = 20000000;
+      const expected = "20,000,000";
+      expect(formatNumber(value, format)).toBe(expected);
+    });
+
+    it(`should format number values as ${format}`, function() {
+      const values = [80000, 120000];
+      const expected = ["80,000", "120,000"];
+      expect(formatNumberValues(values, format)).toEqual(expected);
     });
   });
 
+   // default format
   describe("when you do not specify format", function() {
     it(`should format number with defaults`, function() {
-      expect(formatNumber(20000000)).toBe("20.000.000");
+      const value = 20000000;
+      const expected = "20.000.000";
+      expect(formatNumber(value)).toBe(expected);
+    });
+
+    it(`should format number with defaults`, function() {
+      const values = [80000, 120000];
+      const expected = ["80.000", "120.000"];
+      expect(formatNumberValues(values)).toEqual(expected);
     });
   });
 });
