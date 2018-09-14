@@ -18,8 +18,8 @@ export default class Figure {
   }
 
   createPie(){
-    const pie = new PieChart(160, 160, 7);
-    pie.appendSVG(this.name, this.type, this.data);
+    const pie = new PieChart(this.name, this.type, this.data);
+    pie.appendPie();
   }
 
   createDevicesDetails(){
