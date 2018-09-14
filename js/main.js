@@ -15,7 +15,6 @@ let revenueFigure = null;
 let impresionsFigure = null;
 let visitsFigure = null;
 
-// debugger;
 apiService
   .fetchRevenue()
   .then(data => (revenue = new Revenue(data.smartphone, data.tablet)))
