@@ -89,6 +89,15 @@ body{
   grid-area: device-values;
   display: grid;
   grid-template-columns: repeat(2, 50%);
+  grid-template-areas: "tablet smartphone";
+}
+
+.smartphone-value{
+  grid-area: smartphone
+}
+
+.tablet-value{
+  grid-area: tablet
 }
 
 .smartphone-value > p {
