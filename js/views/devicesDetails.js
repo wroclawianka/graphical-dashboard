@@ -2,11 +2,11 @@ import { formatValue, countPercentage, sumValues } from "./helpers.js";
 
 export default class DeviceDetails{
   // append device info
-  appendDevicesDetails(name, data, isCurrency) {
+  appendDevicesDetails(name, data, isMonetaryValue) {
     const totalValue = sumValues(data);
 
     const tabletPercentage = countPercentage(totalValue, data.tablet);
-    const tabletValue = formatValue(data.tablet, isCurrency);
+    const tabletValue = formatValue(data.tablet, isMonetaryValue);
     const tabletDetails = {
       type: "tablet",
       precentage: tabletPercentage,
@@ -14,7 +14,7 @@ export default class DeviceDetails{
     };
 
     const smartphonePercentage = countPercentage(totalValue, data.smartphone);
-    const smartphoneValue = formatValue(data.smartphone, isCurrency);
+    const smartphoneValue = formatValue(data.smartphone, isMonetaryValue);
     const smartphoneDetails = {
       type: "smartphone",
       precentage: smartphonePercentage,
