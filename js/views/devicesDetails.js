@@ -1,35 +1,16 @@
-import { formatValue, countPercentage, sumValues } from "./helpers.js";
+import { createDivWithClass, findParentContent } from "./../helpers/DOMHelpers.js";
 
 export default class DeviceDetails{
-  // append device info
-  appendDevicesDetails(name, data, isMonetaryValue) {
-    const totalValue = sumValues(data);
-
-    const tabletPercentage = countPercentage(totalValue, data.tablet);
-    const tabletValue = formatValue(data.tablet, isMonetaryValue);
-    const tabletDetails = {
-      type: "tablet",
-      precentage: tabletPercentage,
-      value: tabletValue
-    };
-
-    const smartphonePercentage = countPercentage(totalValue, data.smartphone);
-    const smartphoneValue = formatValue(data.smartphone, isMonetaryValue);
-    const smartphoneDetails = {
-      type: "smartphone",
-      precentage: smartphonePercentage,
-      value: smartphoneValue
-    };
-    const devicesDetails = [tabletDetails, smartphoneDetails];
-    this.appendDeviceSection(name, devicesDetails);
+  constructor(name, devices){
+    this.name = name;
+    this.devices = devices;
   }
 
   // create section with device details and add it to parent node
-  appendDeviceSection(parentName, devicesDetails) {
-    const parent = document.getElementById(parentName);
-    const parentContent = parent.getElementsByClassName("content")[0];
-    const deviceValuesEl = this.createDivWithClass("device-values");
-    deviceValuesEl.innerHTML = this.createDeviceDetailsHTML(devicesDetails);
+  appendDevicesDetails() {
+    const parentContent = findParentContent(this.name);
+    const deviceValuesEl = createDivWithClass("device-values");
+    deviceValuesEl.innerHTML = this.createDeviceDetailsHTML(this.devices);
     parentContent.appendChild(deviceValuesEl);
   }
 
@@ -44,13 +25,6 @@ export default class DeviceDetails{
       </p>
     </div>
     `;
-  }
-
-  // create div with specified class name
-  createDivWithClass(className) {
-    const element = document.createElement("div");
-    element.setAttribute("class", className);
-    return element;
   }
 
   // create HTML with device details

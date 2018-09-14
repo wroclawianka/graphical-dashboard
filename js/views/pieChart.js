@@ -1,13 +1,16 @@
 export default class PieChart {
-  constructor(width, height, volume) {
-    this.width = 160;
-    this.height = 160;
-    this.volume = 7;
+  constructor(name, type, data, width = 160, height = 160, volume = 7) {
+    this.name = name;
+    this.type = type;
+    this.data = data;
+    this.width = width;
+    this.height = height;
+    this.volume = volume;
   }
 
-  appendSVG(name, type, data) {
-    const labels = Object.keys(data);
-    const values = Object.values(data);
+  appendPie() {
+    const labels = Object.keys(this.data);
+    const values = Object.values(this.data);
 
     const radius = Math.min(this.width, this.height) / 2;
     const arc = d3.svg
@@ -15,18 +18,18 @@ export default class PieChart {
       .innerRadius(radius - this.volume)
       .outerRadius(radius);
     const pie = d3.layout.pie().sort(null);
-    const parent = `#${name} .content`;
+    const parent = `#${this.name} .content`;
 
     const svg = d3
       .select(parent)
       .append("svg")
-      .attr("class", `pie ${type}`)
+      .attr("class", `pie ${this.type}`)
       .attr("width", this.width)
       .attr("height", this.height)
       .append("g")
       .attr(
         "transform",
-        "translate(" + this.width / 2 + "," + this.height / 2 + ")"
+        `translate(${this.width/2}, ${this.height/2})`
       );
 
     svg

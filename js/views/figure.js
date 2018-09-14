@@ -1,7 +1,7 @@
 import DevicesDetails from "./devicesDetails.js"
 import PieChart from "./pieChart.js"
 import Summary from "./summary.js"
-import { sumValues, formatValue } from "./helpers.js"
+import { countPercentage, sumValues, formatValue } from "./../helpers/calculationHelpers.js"
 
 export default class Figure {
   constructor(name, type, data, isMonetaryValue) {
@@ -18,24 +18,37 @@ export default class Figure {
   }
 
   createPie(){
-    const pie = new PieChart(160, 160, 7);
-    pie.appendSVG(this.name, this.type, this.data);
+    const pie = new PieChart(this.name, this.type, this.data);
+    pie.appendPie();
   }
 
   createDevicesDetails(){
-    const devicesDetails = new DevicesDetails();
-    devicesDetails.appendDevicesDetails(this.name, this.data, this.isMonetaryValue)
+    const total = sumValues(this.data);
+    const devices = Object.keys(this.data);
+    let devicesData = [];
+    devices.forEach(device => {
+      devicesData.push(this.createDeviceData(total, device, this.data[device]))
+    });
+    const devicesDetails = new DevicesDetails(this.name, devicesData);
+    devicesDetails.appendDevicesDetails()
   }
 
   createSummary(){
     const name = this.name;
-
     const values = Object.values(this.data);
     const totalValue = sumValues(values);
     const total = formatValue(totalValue, this.isMonetaryValue);
-
     const summary = new Summary(name, total);
-
     summary.appendSummary();
+  }
+
+  createDeviceData(total, deviceName, deviceData) {
+    const percentage = countPercentage(total, deviceData);
+    const value = formatValue(deviceData, this.isMonetaryValue);
+    return {
+      type: deviceName,
+      precentage: percentage,
+      value: value
+    };
   }
 }
