@@ -6,9 +6,9 @@ import {
   countPercentage,
   sumValues,
   formatValue
-} from "../js/views/helpers";
+} from "./../js/helpers/calculationHelpers.js";
 
-describe("Helpers", function() {
+describe("Calculation helpers", function() {
   // format specified
   describe("when you specify format", function() {
     const format = "en-US";

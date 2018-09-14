@@ -1,7 +1,7 @@
 import DevicesDetails from "./devicesDetails.js"
 import PieChart from "./pieChart.js"
 import Summary from "./summary.js"
-import { sumValues, formatValue } from "./helpers.js"
+import { sumValues, formatValue } from "./../helpers/calculationHelpers.js"
 
 export default class Figure {
   constructor(name, type, data, isMonetaryValue) {

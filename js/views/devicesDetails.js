@@ -1,4 +1,4 @@
-import { formatValue, countPercentage, sumValues } from "./helpers.js";
+import { formatValue, countPercentage, sumValues } from "./../helpers/calculationHelpers.js";
 
 export default class DeviceDetails{
   // append device info

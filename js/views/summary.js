@@ -1,4 +1,4 @@
-import { sumValues } from "./helpers.js"
+import { sumValues } from "./../helpers/calculationHelpers.js"
 
 export default class Summary{
   constructor(name, total){
