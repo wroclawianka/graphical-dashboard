@@ -15,7 +15,7 @@ export default class PieChart {
       .innerRadius(radius - this.volume)
       .outerRadius(radius);
     const pie = d3.layout.pie().sort(null);
-    const parent = `#${name}`;
+    const parent = `#${name} .content`;
 
     const svg = d3
       .select(parent)
